@@ -1,0 +1,18 @@
+<section class="lesson">
+  <h2>{{ nome | uppercase }}</h2>
+
+  <label for="nome">Seu nome</label>
+  <input id="nome" [(ngModel)]="nome" placeholder="Digite seu nome" />
+  <p>Nome digitado: {{ nome }}</p>
+
+  <button type="button" (click)="habilitarDesabilitarBotao()">
+    {{ botaoDesabilitado ? 'Habilitar' : 'Desabilitar' }} botão de mensagem
+  </button>
+
+  <button type="button" (click)="mostrarMensagem()" [disabled]="botaoDesabilitado">
+    Exibir mensagem
+  </button>
+
+  <p>Data atual: {{ hoje | date: 'dd/MM/yyyy' : '' : 'pt-BR' }}</p>
+  <p>Preço do produto: {{ preco | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}</p>
+</section>

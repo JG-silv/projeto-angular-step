@@ -1,0 +1,26 @@
+@if (estaLogado) {
+  <p>Logado</p>
+} @else {
+  <p>Não logado</p>
+}
+
+<button type="button" (click)="alternarLogin()">Alternar</button>
+
+<ul>
+  @for (produto of produtos; track produto.id) {
+    <li>{{ produto.nome }}</li>
+  } @empty {
+    <li>Nenhum produto disponível</li>
+  }
+</ul>
+
+@switch (perfil) {
+  @case ('admin') {
+    <p>Admin</p>
+  }
+  @default {
+    <p>Outro</p>
+  }
+}
+
+<p [ngClass]="{ logado: estaLogado }">Classe dinâmica</p>

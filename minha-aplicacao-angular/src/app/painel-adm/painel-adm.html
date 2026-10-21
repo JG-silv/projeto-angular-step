@@ -1,0 +1,13 @@
+<section>
+  <h2>Lista de usuários</h2>
+  <ul>
+    @for (usuario of usuarios; track usuario.id) {
+      <li>
+        <strong>{{ usuario.nome | uppercase }}</strong> - {{ usuario.email }} -
+        Salário: {{ usuario.salario | currency: 'BRL' : 'symbol' : '1.2-2' : 'pt-BR' }}
+      </li>
+    } @empty {
+      <li>Nenhum usuário encontrado</li>
+    }
+  </ul>
+</section>
